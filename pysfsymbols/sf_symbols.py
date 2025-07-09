@@ -11,7 +11,18 @@ sf_symbols_conversion_table_path = os.path.join(
 )
 
 def fetch_symbol(symbol_name: str) -> str:
-    """Fetches the SF Symbol with the given name."""
+    """
+    Retrieves the SF Symbol for a given symbol name.
+    
+    Parameters:
+        symbol_name (str): The name of the SF Symbol to retrieve.
+    
+    Returns:
+        str: The SF Symbol corresponding to the given name.
+    
+    Raises:
+        KeyError: If the symbol name is not found in the conversion table.
+    """
 
     with open(sf_symbols_conversion_table_path, "r") as file:
         sf_symbols = json.load(file)
@@ -22,7 +33,12 @@ def fetch_symbol(symbol_name: str) -> str:
         raise KeyError(f"Symbol '{symbol_name}' not found in conversion table.") from e
 
 def fetch_all_symbols() -> list[str]:
-    """Fetches all SF Symbols."""
+    """
+    Fetches all SF Symbols as a list.
+
+    Returns:
+        list[str]: A list of all SF Symbols.
+    """
 
     with open(sf_symbols_conversion_table_path, "r") as file:
         sf_symbols = json.load(file)
@@ -30,7 +46,12 @@ def fetch_all_symbols() -> list[str]:
     return list(sf_symbols.values())
 
 def fetch_all_names() -> list[str]:
-    """Fetches all SF Symbol names."""
+    """
+    Fetches all SF Symbol names.
+
+    Returns:
+        list[str]: A list of all SF Symbol names.
+    """
 
     with open(sf_symbols_conversion_table_path, "r") as file:
         sf_symbols = json.load(file)
@@ -38,7 +59,12 @@ def fetch_all_names() -> list[str]:
     return list(sf_symbols.keys())
 
 def fetch_all() -> dict[str, str]:
-    """Fetches all SF Symbols and their names."""
+    """
+    Fetches all SF Symbols and their names as a dictionary.
+
+    Returns:
+        dict[str, str]: A dictionary where keys are SF Symbol names and values are the corresponding SF Symbols.
+    """
 
     with open(sf_symbols_conversion_table_path, "r") as file:
         sf_symbols = json.load(file)
