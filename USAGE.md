@@ -1,13 +1,4 @@
-# PySFSymbols
-
-## Installation
-
-You can install the library using pip:
-```bash
-pip install pysfsymbols
-```
-
-## Usage[^1]
+# Usage[^1]
 
 This library was designed to be used in combination with Qt for Python, specifically tested with PySide6.
 
